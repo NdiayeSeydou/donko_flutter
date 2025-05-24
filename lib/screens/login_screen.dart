@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:donko_flutter/accueil/home_screen.dart'; // Importation de la page d'accueil
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -29,35 +30,35 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             const SizedBox(height: 40), // Ajout d'espace en haut pour remonter "CONNEXION"
 
-            // Agrandissement de l'image
+            // Logo/image
             Image.asset("assets/donko.png", width: 300, height: 300),
-            const SizedBox(height: 10), // Réduction de l'espace pour remonter "CONNEXION"
+            const SizedBox(height: 10),
 
-            // Texte CONNEXION avec couleur 0xFF00788D, encore plus haut
+            // Texte CONNEXION
             const Text(
               "CONNEXION",
               style: TextStyle(
-                fontSize: 28, // Augmentation de la taille
+                fontSize: 28,
                 fontWeight: FontWeight.bold,
                 color: Color(0xFF00788D),
               ),
             ),
-            const SizedBox(height: 10), // Réduction pour encore monter les champs
+            const SizedBox(height: 10),
 
-            // Champ Email avec bordures arrondies et couleur 0xFF00788D
+            // Champ Email
             TextField(
               decoration: InputDecoration(
                 labelText: "Email",
                 prefixIcon: const Icon(Icons.email, color: Color(0xFF00788D)),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16), // Augmentation du radius
+                  borderRadius: BorderRadius.circular(16),
                   borderSide: const BorderSide(color: Color(0xFF00788D)),
                 ),
               ),
             ),
-            const SizedBox(height: 15), // Réduction de l'espace
+            const SizedBox(height: 15),
 
-            // Champ Mot de passe avec bordures arrondies et couleur 0xFF00788D
+            // Champ Mot de passe
             TextField(
               obscureText: _obscureText,
               decoration: InputDecoration(
@@ -75,34 +76,39 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                 ),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16), // Augmentation du radius
+                  borderRadius: BorderRadius.circular(16),
                   borderSide: const BorderSide(color: Color(0xFF00788D)),
                 ),
               ),
             ),
             const SizedBox(height: 10),
 
-            // Lien Mot de passe oublié en jaune
+            // Lien Mot de passe oublié
             Align(
               alignment: Alignment.centerRight,
               child: TextButton(
                 onPressed: () {},
                 child: const Text(
                   "Mot de passe oublié?",
-                  style: TextStyle(color: Color(0xFFFFD045)), // Couleur jaune
+                  style: TextStyle(color: Color(0xFFFFD045)),
                 ),
               ),
             ),
-            const SizedBox(height: 30), // Réduction de l'espace
+            const SizedBox(height: 30),
 
-            // Bouton Connexion avec radius et texte plus grand
+            // Bouton Connexion (Navigation vers HomeScreen)
             ElevatedButton(
-              onPressed: () {}, // Action à définir
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()), // Redirection
+                );
+              },
               style: ElevatedButton.styleFrom(
-                minimumSize: const Size(double.infinity, 60), // Bouton légèrement plus grand
+                minimumSize: const Size(double.infinity, 60),
                 backgroundColor: const Color(0xFF00788D),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16), // Augmentation du radius
+                  borderRadius: BorderRadius.circular(16),
                 ),
               ),
               child: const Text(

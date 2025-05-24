@@ -35,6 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   image_picker: ^1.1.2
+  flutter_pdfview: ^1.4.0+1
 
 dev_dependencies:
   flutter_test:
@@ -61,6 +62,9 @@ flutter:
     - assets/donko_livre.png 
     - assets/donko.png
     - assets/photo.png
+    - assets/profil.png
+    - assets/phython.pdf
+    - assets/pdf.jpeg
 
 
   # To add assets to your application, add an assets section, like this:
